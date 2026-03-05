@@ -1,0 +1,25 @@
+# python
+__pycache__/
+*.pyc
+
+# virtual environment
+venv/
+
+# datasets
+data_raw/
+train_images_labels_targets/
+*.tar
+*.zip
+
+# model checkpoints
+checkpoints/
+*.pt
+*.pth
+
+# vscode
+.vscode/
+
+# predictions
+prediction.png
+overlay_prediction.png
+test.jpg
