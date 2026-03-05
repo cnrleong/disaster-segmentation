@@ -41,7 +41,9 @@ All path arguments (`--data-dir`, `--output-dir`, `--xbd-root`, `--out-dir`) acc
 
 ### Data pipeline (after downloading xBD)
 
-1. **Extract** the xBD archive (e.g. `train_images_labels_targets`) so you have disaster folders with `images/post_disaster/` and `labels/`.
+See **DATA_LAYOUT.md** for how xBD is written locally at each step.
+
+1. **Extract** the xBD archive (e.g. `train_images_labels_targets`). Two layouts are supported: flat `train/images` and `train/labels`, or per-disaster folders with `images/post_disaster/` and `labels/`.
 2. **Extract a subset**:  
    `python extract_xbd_subset.py --xbd-root <path_to_extracted_xbd> --disaster hurricane-harvey -n 300 --out-dir data_raw`
 3. **Generate masks** from JSON labels:  

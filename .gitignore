@@ -23,3 +23,6 @@ checkpoints/
 prediction.png
 overlay_prediction.png
 test.jpg
+
+test.png
+*.code-workspace
