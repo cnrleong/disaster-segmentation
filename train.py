@@ -310,7 +310,14 @@ def main() -> None:
     )
     model.to(device)
 
-    criterion = nn.CrossEntropyLoss(ignore_index=-1)
+    # class weights to combat background imbalance
+    class_weights = torch.tensor([0.02, 1.0, 2.0], device=device)
+
+    criterion = nn.CrossEntropyLoss(
+        weight=class_weights,
+        ignore_index=-1
+    )
+
     optimizer = torch.optim.Adam(model.parameters(), lr=args.lr)
 
     best_miou = -1.0
